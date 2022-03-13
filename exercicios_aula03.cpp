@@ -12,6 +12,8 @@ void questao5(void);
 void questao6(void);
 void questao7(void);
 // void questao8(void);
+void questao9(void);
+
 
 int main(){
     // questao1();
@@ -20,7 +22,9 @@ int main(){
     // questao4();
     // questao5();
     // questao6();
-    questao7();
+    // questao7();
+    // questao8();
+    questao9();
 }
 
 void questao1(){
@@ -123,5 +127,28 @@ void questao7(){
    std::cout << "A área do circulo: A = " << pi*pow(r,2) << "\n";
  
 }
+
+// void questao8(){} FALTANDO SLIDE
+
+
+namespace VITOR{
+    int i=1, j=2;
+    float z = 6.28;
+}
+
+
+void questao9(){
+    std::cout << "i=" << VITOR::i << "\n" << 
+    "sen("<< VITOR::i << ") = " << sin(VITOR::i) << "\n"
+    "cos("<< VITOR::i << ") = " << cos(VITOR::i) << "\n\n";
+
+    std::cout << "j=" << VITOR::j << "\n" << 
+    "sen("<< VITOR::j << ") = " << sin(VITOR::j) << "\n"
+    "cos("<< VITOR::j << ") = " << cos(VITOR::j) << "\n\n";
+
+    std::cout << "z=" << VITOR::z << "\n" << 
+    "sen("<< VITOR::z << ") = " << sin(VITOR::z) << "\n"
+    "cos("<< VITOR::z << ") = " << cos(VITOR::z) << "\n\n";
+}    
 
 
