@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include <string>
 
 //Para a questao7
 #define pi 3.14159
@@ -13,6 +14,8 @@ void questao6(void);
 void questao7(void);
 // void questao8(void);
 void questao9(void);
+void questao10(void);
+// void piramide(void);
 
 
 int main(){
@@ -24,7 +27,8 @@ int main(){
     // questao6();
     // questao7();
     // questao8();
-    questao9();
+    // questao9();
+    // piramide();
 }
 
 void questao1(){
@@ -152,3 +156,28 @@ void questao9(){
 }    
 
 
+/*questão 10
+void piramide(){
+    int width = 113, qntd_estrelas;
+    // int espacos = width - qntd_estrelas;
+    string frase_estrela="", str_espaco;
+
+    //percorrendo as linhas
+    for(int l; l<6; l++){
+        str_espaco = ""; //resetando variável
+
+        for(int j; j<(width-qntd_estrelas)/2; j++){
+            str_espaco += " ";
+        }
+
+        //qntd_estrelas = l*2;
+
+        //for(int k; k<qntd_estrelas; k++){
+        //    frase_estrela+="*";
+        //}
+
+        
+
+    }
+
+}*/
