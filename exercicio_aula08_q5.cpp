@@ -9,8 +9,8 @@ void soma(float *, float *);
 void sub(float *, float *, int op);
 void mulk(float *, int op);
 void muls(float *,float *);
+void mulv(float *, float *);
 void ShowArray(float *);
-
 
 int main(){
     float A[3], B[3];
@@ -27,7 +27,7 @@ int main(){
 
     while(1){
         //programa principal
-        cout << "\nEscolha a operacao desejada" << endl;
+        cout << "\nEscolha a operacao desejada:" << endl;
         cout << "0. Sair \t 1. A+B \t 2. A-B \t 3. B-A" << endl;
         cout << "4. kA \t 5. kB \t 6. A*B \t 7. AxB"  << endl;
         cin >> op;
@@ -73,7 +73,7 @@ void op_decider(int op, float A[], float B[]){
         muls(A,B);
         break;
     case 7:
-        //mulv(A,B)
+        mulv(A,B);
         break;
     default:
         break;
@@ -129,6 +129,16 @@ void muls(float A[], float B[]){
     }
     //apresenta resultado
     cout << "A*B = " << sum << endl;   
+}
+
+void mulv(float A[], float B[]){
+    float C[3];
+    C[0] = A[1]*B[2] - A[2]*B[1];
+    C[1] = A[2]*B[0] - A[0]*B[2];
+    C[2] = A[0]*B[1] - A[1]*B[0];
+
+    cout << "AxB = ";
+    ShowArray(C); 
 }
 
 
