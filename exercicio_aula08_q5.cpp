@@ -6,7 +6,8 @@ using namespace std;
 void UserInputArray(float *);
 void op_decider(int, float *, float *);
 void soma(float *, float *);
-void soma(float *, float *, int op);
+void sub(float *, float *, int op);
+void mulk(float *, int op);
 void ShowArray(float *);
 
 
@@ -25,7 +26,7 @@ int main(){
 
     while(1){
         //programa principal
-        cout << "Escolha a operacao desejada" << endl;
+        cout << "\nEscolha a operacao desejada" << endl;
         cout << "0. Sair \t 1. A+B \t 2. A-B \t 3. B-A" << endl;
         cout << "4. kA \t 5. kB \t 6. A*B \t 7. AxB"  << endl;
         cin >> op;
@@ -62,10 +63,10 @@ void op_decider(int op, float A[], float B[]){
         sub(B,A, op);
         break;
     case 4:
-        //mulk(A);
+        mulk(A, op);
         break;
     case 5:
-        //mulk(B);
+        mulk(B, op);;
         break;    
     case 6:
         //muls(A,B);
@@ -104,6 +105,20 @@ void sub(float A[], float B[], int op){
     ShowArray(sub);    
 }
 
+void mulk(float A[], int op){
+    float k, kA[3];
+    cout << "Digite o valor de k: ";
+    cin >> k;
+    for(int i=0; i<3; i++){
+        kA[i] = k*A[i];
+    }
+    //apresenta resultado
+    if(op==4)
+        cout << "kA = ";
+    else 
+        cout << "kB = ";    
+    ShowArray(kA);    
+}
 
 
 void ShowArray(float v[]){
