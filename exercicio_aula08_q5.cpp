@@ -8,6 +8,7 @@ void op_decider(int, float *, float *);
 void soma(float *, float *);
 void sub(float *, float *, int op);
 void mulk(float *, int op);
+void muls(float *,float *);
 void ShowArray(float *);
 
 
@@ -15,7 +16,7 @@ int main(){
     float A[3], B[3];
     int op;
 
-    cout << "--OPERACOES EM VETORES---" << endl;
+    cout << "\n--OPERACOES EM VETORES---\n" << endl;
     cout << "Digite os vetores:" << endl;
     
     cout << "Vetor A: " << endl;
@@ -66,10 +67,10 @@ void op_decider(int op, float A[], float B[]){
         mulk(A, op);
         break;
     case 5:
-        mulk(B, op);;
+        mulk(B, op);
         break;    
     case 6:
-        //muls(A,B);
+        muls(A,B);
         break;
     case 7:
         //mulv(A,B)
@@ -118,6 +119,16 @@ void mulk(float A[], int op){
     else 
         cout << "kB = ";    
     ShowArray(kA);    
+}
+
+void muls(float A[], float B[]){
+    //multiplicacao escalar de dois vetores
+    float sum=0;
+    for(int i=0; i<3; i++){
+        sum += A[i] * B[i];
+    }
+    //apresenta resultado
+    cout << "A*B = " << sum << endl;   
 }
 
 
