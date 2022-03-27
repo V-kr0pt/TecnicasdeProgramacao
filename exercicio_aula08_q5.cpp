@@ -6,6 +6,7 @@ using namespace std;
 void UserInputArray(float *);
 void op_decider(int, float *, float *);
 void soma(float *, float *);
+void soma(float *, float *, int op);
 void ShowArray(float *);
 
 
@@ -23,6 +24,7 @@ int main(){
 
 
     while(1){
+        //programa principal
         cout << "Escolha a operacao desejada" << endl;
         cout << "0. Sair \t 1. A+B \t 2. A-B \t 3. B-A" << endl;
         cout << "4. kA \t 5. kB \t 6. A*B \t 7. AxB"  << endl;
@@ -49,14 +51,15 @@ void op_decider(int op, float A[], float B[]){
     case 1:
         cout << "Soma!" << endl;
         soma(A,B);
+        cout << "\n";
         break;
     case 2:
         cout << "Sub A-B!" << endl;
-        //sub(A,B);
+        sub(A,B, op);
         break;
     case 3:
         cout << "Sub B-A!" << endl;
-        //sub(B,A);
+        sub(B,A, op);
         break;
     case 4:
         //mulk(A);
@@ -86,6 +89,22 @@ void soma(float A[], float B[]){
     cout << "A+B = ";
     ShowArray(sum);    
 }
+
+void sub(float A[], float B[], int op){
+    //soma dois vetores
+    float sub[3];
+    for(int i=0; i<3; i++){
+        sub[i] = A[i] - B[i];
+    }
+    //apresenta resultado
+    if(op == 2)
+        cout << "A-B = ";
+    else 
+        cout << "B-A = ";
+    ShowArray(sub);    
+}
+
+
 
 void ShowArray(float v[]){
     //mostra o array no terminal
