@@ -12,15 +12,17 @@ void mulv(float *, float *);
 void ShowArray(float *);
 
 int main(){
+    //arrays de entrada 
     float A[3], B[3];
+    //variável de decisão da operação
     int op;
 
-    cout << "\n--OPERACOES EM VETORES---\n" << endl;
-    cout << "Digite os vetores:" << endl;
+    cout << "\n--OPERACOES EM ARRAYS---\n" << endl;
+    cout << "Digite os arrays:" << endl;
     
-    cout << "Vetor A: " << endl;
+    cout << "Array A: " << endl;
     UserInputArray(A); 
-    cout << "Vetor B: " << endl;
+    cout << "Array B: " << endl;
     UserInputArray(B);
 
 
@@ -32,8 +34,10 @@ int main(){
         cin >> op;
 
         if(op == 0)
+            //opção 0 = sair do while
             break;
 
+        //função para determinar qual operação será feita
         op_decider(op, A, B);
     } 
     return 0;
@@ -47,31 +51,35 @@ void UserInputArray(float A[]){
 }
 
 void op_decider(int op, float A[], float B[]){
+
     switch (op)
     {
     case 1:
-        cout << "Soma!" << endl;
+        //A+B
         soma(A,B);
-        cout << "\n";
         break;
     case 2:
-        cout << "Sub A-B!" << endl;
+        //A-B
         sub(A,B, op);
         break;
     case 3:
-        cout << "Sub B-A!" << endl;
+        //B-A
         sub(B,A, op);
         break;
     case 4:
+        //kA
         mulk(A, op);
         break;
     case 5:
+        //kB
         mulk(B, op);
         break;    
     case 6:
+        //A*B
         muls(A,B);
         break;
     case 7:
+        //A x B
         mulv(A,B);
         break;
     default:
@@ -81,7 +89,7 @@ void op_decider(int op, float A[], float B[]){
 }
 
 void soma(float A[], float B[]){
-    //soma dois vetores
+    //soma dois arrays
     float sum[3];
     for(int i=0; i<3; i++){
         sum[i] = A[i] + B[i];
@@ -92,7 +100,7 @@ void soma(float A[], float B[]){
 }
 
 void sub(float A[], float B[], int op){
-    //soma dois vetores
+    //subtrai dois arrays
     float sub[3];
     for(int i=0; i<3; i++){
         sub[i] = A[i] - B[i];
@@ -106,6 +114,7 @@ void sub(float A[], float B[], int op){
 }
 
 void mulk(float A[], int op){
+    //multiplica o array por uma constante
     float k, kA[3];
     cout << "Digite o valor de k: ";
     cin >> k;
@@ -121,7 +130,7 @@ void mulk(float A[], int op){
 }
 
 void muls(float A[], float B[]){
-    //multiplicacao escalar de dois vetores
+    //multiplicação escalar de dois arrays
     float sum=0;
     for(int i=0; i<3; i++){
         sum += A[i] * B[i];
@@ -131,6 +140,7 @@ void muls(float A[], float B[]){
 }
 
 void mulv(float A[], float B[]){
+    //multiplicação vetorial de dois arrays
     float C[3];
     C[0] = A[1]*B[2] - A[2]*B[1];
     C[1] = A[2]*B[0] - A[0]*B[2];
