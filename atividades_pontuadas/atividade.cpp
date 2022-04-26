@@ -30,12 +30,13 @@ int main(){
 
         cout << "Escolha a quantidade de notas que serao utilizadas, opcoes: 3 ou 4" << endl;
         do{
-            cin >> op; 
-            recebeNota(N, op);  
-            if(op == 3){                
+            cin >> op;  
+            if(op == 3){        
+                recebeNota(N, op);        
                 //utiliza media com 3 argumentos
                 m = media(N[0], N[1], N[2]);
             }else if(op == 4){
+                recebeNota(N, op);
                 //utiliza media com um vetor como argumento
                 m = media(N);
             }else{
@@ -63,7 +64,6 @@ void recebeNota(float N[], const int length){
     }
 }
 
-
 float media(float n1, float n2){
     return (n1+n2)/2;
 }
@@ -73,9 +73,9 @@ float media(float n1, float n2, float n3){
 }
 
 float media(float n[4]){
-    bubbleSort(n, 4);
-    cout << "Nota descartada: " << n[0] << endl;
-    return media(n[1],n[2],n[3]);
+    bubbleSort(n, 4); //ordena o vetor em ordem crescente 
+    cout << "Nota descartada: " << n[0] << endl; //apresenta no console a nota descartada 
+    return media(n[1],n[2],n[3]);  //faz a media das 3 maiores notas
 }
 
 void bubbleSort(float a[4], const int length){
