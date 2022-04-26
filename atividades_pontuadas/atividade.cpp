@@ -2,14 +2,15 @@
 
 using namespace std;
 
+//funcao para recebe media e colocar em um vetor
+void recebeNota(float [], const int);
 //sobrecarga da funcao media
 float media(float, float);
 float media(float, float, float);
 float media(float []);
-//algortimo de ordenamento
-void bubblesort(float [], const int);
+//funcoes do algortimo de ordenamento (bolha)
+void bubbleSort(float [], const int);
 void changePosition(float &, float &);
-
 
 int main(){
     int cargahoraria, op;
@@ -20,11 +21,8 @@ int main(){
 
     if(cargahoraria <= 45){
 
-        cout << "Adicione as duas notas" << endl;
-        for(int i=0; i<2; i++){
-            cout << "Nota " << i+1 << ": ";
-            cin >> N[i];
-        }  
+        cout << "Adicione as duas notas" << endl;        
+        recebeNota(N, 2);                
         //utiliza media com 2 argumentos
         m = media(N[0], N[1]);
 
@@ -33,27 +31,18 @@ int main(){
         cout << "Escolha a quantidade de notas que serao utilizadas, opcoes: 3 ou 4" << endl;
         do{
             cin >> op; 
-            if(op == 3){
-
-                for(int i=0; i < op; i++){
-                    cout << "Nota " << i+1 << ": ";
-                    cin >> N[i];
-                }
+            recebeNota(N, op);  
+            if(op == 3){                
                 //utiliza media com 3 argumentos
                 m = media(N[0], N[1], N[2]);
-
             }else if(op == 4){
-
-                for(int i=0; i < op; i++){
-                    cout << "Nota " << i+1 << ": ";
-                    cin >> N[i];
-                }
                 //utiliza media com um vetor como argumento
                 m = media(N);
             }else{
                 cout << "Opcao invalida -> opcoes validas: 3 ou 4" << endl;
             }
-        }while(op!=3 && op!=4); //enquanto n for uma opcao valida
+
+        }while(op!=3 && op!=4); //loop enquanto n for uma opcao valida
 
     }
 
@@ -67,6 +56,14 @@ int main(){
     return 0;
 }
 
+void recebeNota(float N[], const int length){
+    for(int i=0; i < length; i++){
+        cout << "Nota " << i+1 << ": ";
+        cin >> N[i];
+    }
+}
+
+
 float media(float n1, float n2){
     return (n1+n2)/2;
 }
@@ -76,12 +73,12 @@ float media(float n1, float n2, float n3){
 }
 
 float media(float n[4]){
-    bubblesort(n, 4);
+    bubbleSort(n, 4);
     cout << "Nota descartada: " << n[0] << endl;
     return media(n[1],n[2],n[3]);
 }
 
-void bubblesort(float a[4], const int length){
+void bubbleSort(float a[4], const int length){
     for(int i = length; i>0; i--){
 
         for(int j=0; j<i-1; j++){
