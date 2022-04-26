@@ -91,8 +91,7 @@ void bubblesort(float a[4], const int length){
                 changePosition(a[j],a[j+1]);
             }
         }
-    }
-    for(int i=0; i<4; i++){cout << a[i] << endl;}    
+    }  
 }
 
 void changePosition(float &a, float &b){
