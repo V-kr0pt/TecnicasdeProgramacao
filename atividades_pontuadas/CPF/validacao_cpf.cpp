@@ -4,7 +4,6 @@
 
 using namespace std;
 
-//void CPF_get(string);
 void CPF_str2int(string , int []);
 void showArray(int [], int);
 int CPF_validation(int []);
@@ -44,7 +43,7 @@ int main(){
         getline(input, scpf); 
         //verifica se o CPF é válido 
         CPF_str2int(scpf, icpf);
-        //Adiciona ao array de flags 
+        //valida o cpf e retorna a flag 
         valid = CPF_validation(icpf);
         if(valid){
             cout << "O CPF da linha " << i+1 << " é válido" << endl;
