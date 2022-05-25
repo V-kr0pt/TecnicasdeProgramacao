@@ -62,7 +62,11 @@ float Circulo::distance(Circulo B){
     float x_dist = (x - B.x);
     float y_dist = (y - B.y);
     float center_dist = sqrt(pow(x_dist,2) + pow(y_dist,2));
-    return center_dist - r - B.r; //distancia entre as circunferencias
+    float dist = center_dist - r - B.r; //distancia entre as circunferencias
+    if(dist < 0){
+        dist = 0;
+    }
+    return  dist;
 }
 
 //Métodos Privados
