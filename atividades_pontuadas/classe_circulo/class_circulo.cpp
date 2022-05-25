@@ -5,10 +5,10 @@ using namespace std;
 
 class Circulo {
     private:
-        float r=0;
-        float x,y;
-        float area(float);
-        float circumference(float);
+        float r=0; //raio
+        float x,y; //posição do centro no R2
+        float area(float); //função de cálculo de área
+        float circumference(float); //função de calculo de circunferência
     public:
         Circulo(float, float); //construtora
         void set_ratio(float); //define r
@@ -18,7 +18,7 @@ class Circulo {
         void show_center(); //apresenta x e y no console
         void show_area(); // apresenta o resultado da área do círculo
         void show_circumference(); //apresenta o resultado do perímetro do círculo
-        float distance(Circulo);
+        float distance(Circulo); //apresenta a distância entre o círculo e outro
 
 };
 
@@ -76,7 +76,7 @@ float Circulo::circumference(float r){
 
 
 int main(){
-    Circulo A(0,0); //circulo com centro default (origem) x=0,y=0
+    Circulo A(0,0); //circulo com centro x=0,y=0 (origem) 
     Circulo B(5,20); //circulo com centro em x=5, y=20
     cout << '\n';
     //testando método setar raio e apresentar raio
