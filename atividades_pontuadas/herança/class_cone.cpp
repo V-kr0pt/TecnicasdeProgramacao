@@ -21,11 +21,11 @@ Cone::Cone(float a, float b, float c){
     y = b;
     r = c;
 }
-/*
-//Função destrutora
-Elipse::~Elipse(){}
 
-Função para cálculo de área
-float Elipse::area(){
-    return r*R*M_PI;        
-}*/
+//Função destrutora
+Cone::~Cone(){};
+
+//Função para cálculo de volume
+float Cone::volume(){
+    return 1/3*M_PI*pow(r,2)*H;        
+}

@@ -7,9 +7,11 @@ class Circulo {
     private:
         float area(float); //função de cálculo de área
         float circumference(float); //função de calculo de circunferência
+    
     protected: //para que seja possível acessar a partir de outras classes
         float r=1; //raio
         float x,y; //posição do centro no R2        
+    
     public:
         Circulo();
         Circulo(float, float); //construtora
@@ -21,7 +23,6 @@ class Circulo {
         void show_area(); // apresenta o resultado da área do círculo
         void show_circumference(); //apresenta o resultado do perímetro do círculo
         float distance(Circulo); //apresenta a distância entre o círculo e outro
-
 };
 
 #endif
