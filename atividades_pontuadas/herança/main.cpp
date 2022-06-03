@@ -4,6 +4,7 @@
 
 using namespace std;
 
+//Declaração de funções
 void operation_input(int&);
 void elipse_input(Elipse&);
 void cone_input(Cone&);
@@ -31,7 +32,7 @@ int main(){
         cone_parameters(cone);
         //Apresentando volume do cone
         cout << "\nO volume do cone é ";
-        cone.show_volume();
+        cone.show_volume(); //como volume() é um método privado, show_volume() se faz necessário 
         cout << "\n\n";
     }       
  
@@ -40,6 +41,7 @@ int main(){
 
 //Função para seleção de elipse ou cone
 void operation_input(int &op){
+    //enquanto não for uma operação inválida
     do{
         cout << "Escolha o que deseja cadastrar:" << endl;
         cout << "1.Elipse \n2.Cone" << endl;
@@ -66,9 +68,9 @@ void elipse_input(Elipse &elipse){
     cout<< "R: ";
     cin >> R;
 
-    elipse.set_center(x,y);
-    elipse.set_ratio(r);
-    elipse.R = R;
+    elipse.set_center(x,y); //set_center() pois x e y são atributos protegidos
+    elipse.set_ratio(r); //set_ratio() pois r é um atributo protegido
+    elipse.R = R; //R é um atributo público
 
 }
 
@@ -90,10 +92,10 @@ void cone_input(Cone &cone){
     cout<< "H: ";
     cin >> H;
 
-    //setando valores do cone
-    cone.set_center(x,y);
-    cone.set_ratio(r);
-    cone.set_height(H);
+    //setando valores do cone 
+    cone.set_center(x,y); //atributo protegido
+    cone.set_ratio(r); //atributo protegido
+    cone.set_height(H); //atributo privado
 };
 
 //Funções para perguntar ao usuário se os parâmetros serão os padrões ou modificados

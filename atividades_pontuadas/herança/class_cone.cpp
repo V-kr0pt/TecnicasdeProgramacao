@@ -2,7 +2,7 @@
 #include <cmath>
 #include "class_cone.h"
 
-//Sobrecarga da função construtora
+// --Sobrecarga da função construtora--
 
 //Função construtora sem parâmetros
 Cone::Cone(){
