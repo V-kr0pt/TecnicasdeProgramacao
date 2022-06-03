@@ -15,36 +15,44 @@ Circulo::Circulo(float a, float b){
     y = b;    
 }
 
-//Métodos Públicos
+// ---Métodos Públicos---
+//Função para modificar raio
 void Circulo::set_ratio(float a){
     r = a;
 }
 
+//Função para aumentar o raio utilizando porcentagem
 void Circulo::increase_ratio(float p){
-    r = (1+p/100)*r;
+    r += (p/100)*r;
 }
 
+//Função para modificar centro 
 void Circulo::set_center(float a, float b){
     x = a;
     y = b;    
 }
 
+//Função para apresentar raio
 void Circulo::show_ratio(){
     cout << "Raio = " << r << endl;
 }
 
+//Função para apresentar centro
 void Circulo::show_center(){
     cout << "Centro = (" << x << "," << y <<")"<< endl;
 }
 
+//Função para apresentar área
 void Circulo::show_area(){
     cout << "Area = " << area(r) << endl;
 }
 
+//Função para apresentar circunferência
 void Circulo::show_circumference(){
     cout << "Perimetro = " << circumference(r) << endl;
 }
 
+//Função para calculo de distância entre círculos
 float Circulo::distance(Circulo B){
     float x_dist = (x - B.x);
     float y_dist = (y - B.y);
@@ -56,11 +64,14 @@ float Circulo::distance(Circulo B){
     return  dist;
 }
 
-//Métodos Privados
+// --- Métodos Privados ---
+
+//Função para cálulo de área de um círculo
 float Circulo::area(float r){
     return  M_PI*pow(r,2); //pi*r²
 }
 
+//Função para cálculo de circunferência
 float Circulo::circumference(float r){
     return 2*M_PI*r;
 }

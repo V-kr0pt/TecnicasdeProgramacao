@@ -13,7 +13,12 @@ class Cone : public Circulo{
         Cone();
         Cone(float, float);
         Cone(float, float, float);
+        //Função destrutora
         ~Cone();
+        //Função para modificar altura
+        void set_height(float heigth);
+        //Função para apresentar volume no console
+        void show_volume();
 };
 
 #endif
