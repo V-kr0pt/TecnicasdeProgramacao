@@ -1,6 +1,3 @@
-//modificar nome de op2
-//usar sobrecarga para parameters
-
 #include <iostream>
 #include "class_elipse.h"
 #include "class_cone.h"
@@ -14,11 +11,10 @@ void elipse_parameters(Elipse&);
 void cone_parameters(Cone&);
 
 int main(){
-    int op;
-    char op2;
-    Elipse elipse;
-    Cone cone;   
- 
+    int op; //flag da operação
+    Elipse elipse; //instânciando objeto da classe Elipse (sem parâmetros)
+    Cone cone;   //instânciando objeto da classe Cone (sem parâmetros)
+   
     //Obtendo seleção do usuário (elipse ou cone)
     operation_input(op);
     
@@ -38,10 +34,11 @@ int main(){
         cone.show_volume();
         cout << "\n\n";
     }       
-
+ 
     return 0;
 }
 
+//Função para seleção de elipse ou cone
 void operation_input(int &op){
     do{
         cout << "Escolha o que deseja cadastrar:" << endl;
@@ -53,6 +50,7 @@ void operation_input(int &op){
     }while(op!=1 and op!=2);
 }
 
+//Funções para modificar os parâmetros
 void elipse_input(Elipse &elipse){
     float x, y;
     cout << "Digite o ponto no R2 em que está localizado o centro da elipse" << endl;
@@ -98,25 +96,25 @@ void cone_input(Cone &cone){
     cone.set_height(H);
 };
 
-//Pergunta ao usuário se os parâmetros serão os padrões ou modificados
+//Funções para perguntar ao usuário se os parâmetros serão os padrões ou modificados
 void elipse_parameters(Elipse &elipse){
-    char op2;
+    char op;
     cout << "Deseja usar a elipse padrão? (C=(0,0); r=1; R=2)" << endl;
     //se for diferente de 's' os dados serão perguntados ao usuário
     cout << "(s/N)-> ";
-    cin >> op2;        
-    if(op2 != 's'){
+    cin >> op;        
+    if(op != 's'){
         elipse_input(elipse);
     }
 }
 
 void cone_parameters(Cone &cone){
-    char op2;
+    char op;
     cout << "Deseja usar o cone padrão? (C=(0,0); r=1; H=1)" << endl;
     //se entrada for diferente de 's' os dados serão perguntados ao usuário
     cout << "(s/N)-> ";
-    cin >> op2;        
-    if(op2 != 's'){
+    cin >> op;        
+    if(op != 's'){
         cone_input(cone);
     }
 }
