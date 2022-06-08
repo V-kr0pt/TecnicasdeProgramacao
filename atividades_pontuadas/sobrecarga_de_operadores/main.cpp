@@ -39,7 +39,7 @@ int main(){
     cout << "r2 = " << elipse1.ratio() << endl;
     cout << "R2 = " << elipse1.R << endl; 
 
-     cout << "\n--- Elipse 3 ---" << endl;
+    cout << "\n--- Elipse 3 ---" << endl;
     elipse2 = elipse0 * elipse1;
     cout << "r3 = r1 * r2 = " << elipse2.ratio() << endl; //valor esperado: r3 = 6
     cout << "R3 = R1 * R2 = " << elipse2.R << endl; //valor esperado: R3 = 20
