@@ -43,6 +43,3 @@ void Cone::show_volume(){
     std::cout << volume() << " unidades de volume ";
 }
 
-Circulo operator + (Circulo circulo){
-    this->R += circulo.R;   
-}
