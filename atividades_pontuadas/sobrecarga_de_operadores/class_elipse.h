@@ -6,6 +6,7 @@
 class Elipse : public Circulo{
     public:
         float R; //raio maior como membro público
+        Elipse operator * (Elipse);
         //Sobrecarga da função construtora
         Elipse();
         Elipse(float, float);
