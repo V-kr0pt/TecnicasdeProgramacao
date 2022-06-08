@@ -9,12 +9,16 @@ class Cone : public Circulo{
         //Função para cálculo de volume
         float volume();
     public:
+        //Sobrecarga do operador ++;
+        void operator ++ ();
         //Sobrecarga da função construtora
         Cone();
         Cone(float, float);
         Cone(float, float, float);
         //Função destrutora
         ~Cone();
+        //Função que devolve valor da altura
+        float height();
         //Função para modificar altura
         void set_height(float heigth);
         //Função para apresentar volume no console

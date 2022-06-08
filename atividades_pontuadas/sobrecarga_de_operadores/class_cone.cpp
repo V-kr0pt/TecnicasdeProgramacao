@@ -29,6 +29,10 @@ Cone::Cone(float a, float b, float c){
 //Função destrutora
 Cone::~Cone(){};
 
+float Cone::height(){
+    return H;
+}
+
 //Função para definir altura do cone
 void Cone::set_height(float heigth){
     H = heigth;
@@ -43,3 +47,6 @@ void Cone::show_volume(){
     std::cout << volume() << " unidades de volume ";
 }
 
+void Cone::operator ++ (){
+    this->H++;
+}
