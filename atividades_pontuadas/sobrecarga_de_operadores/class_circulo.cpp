@@ -83,7 +83,7 @@ float Circulo::circumference(float r){
 
 //Função para sobrecarga de operador +
 Circulo Circulo::operator + (Circulo circulo){
-    Circulo temp;
-    temp.r = this->r + circulo.ratio();
-    return temp;
+    Circulo temp; // instanciando um objeto (temporário) da classe circulo 
+    temp.r = this->r + circulo.ratio(); //o raio do novo círculo será a soma dos raios dos circulos
+    return temp; // retornando objeto
 }
